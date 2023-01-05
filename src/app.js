@@ -11,16 +11,16 @@ window.onload = function(pronoun, adj, noun, ext) {
   noun = ["laughter", "emotion", "code"];
   ext = [".com", ".net", ".io"];
   const result = [];
-  for (let i = 0; i < pronoun.length; i++) {
-    for (let j = 0; j < adj.length; j++) {
-      for (let k = 0; k < noun.length; k++)
-        for (let m = 0; m < ext.length; m++) {
-          result.push(pronoun[i] + adj[j] + noun[k] + ext[m]);
+  for (const pro of pronoun) {
+    for (const ad of adj) {
+      for (const no of noun)
+        for (const ex of ext) {
+          result.push(pro + ad + no + ex);
         }
     }
   }
   let domainNames = document.getElementById("domain-name");
-  for (let i = 0; i < result.length; i++) {
-    domainNames.innerHTML += `${result[i]}<br>`;
+  for (const name of result) {
+    domainNames.innerHTML += `${name}<br>`;
   }
 };
